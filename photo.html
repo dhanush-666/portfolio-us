@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+
+    <!-- Google Fonts for professional fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS for grid and components -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) for smooth animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        /* General reset and custom fonts */
+        body, h1, h2, h3, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2c3e50; /* More subtle dark gray color */
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: #fff !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-left: 30px;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00c4cc;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Full-Page Sections */
+        section {
+            height: 100vh; /* Set each section to take the full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        /* Hero Section with Gradient */
+        .hero {
+            background: linear-gradient(135deg, #00c4cc, #4c6ef5); /* Gradient background */
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .hero img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin-right: 30px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            background-color: #fff;
+            color: #333;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid #00c4cc;
+        }
+
+        .hero .btn:hover {
+            background-color: #00c4cc;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* Skills Section */
+        .skill-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #00c4cc;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover i {
+            transform: scale(1.2);
+        }
+
+        .skill-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+            margin-top: 100px;
+        }
+
+        .footer a {
+            color: #00c4cc;
+            font-weight: 600;
+        }
+
+        /* Project Card Styles */
+        .project-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-card h4 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .project-card a {
+            background-color: #00c4cc;
+            padding: 10px 20px;
+            color: #fff;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            display: block;
+            text-align: center;
+        }
+
+        .project-card a:hover {
+            background-color: #4c6ef5;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .skill-card {
+                margin: 15px auto;
+            }
+
+            .navbar {
+                padding: 15px 30px;
+            }
+
+            .navbar a {
+                margin-left: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Your Name</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="dhanush img.jpg" alt="Your Image"> <!-- Replace with your image -->
+        <div>
+            <h1 data-aos="fade-up">Your Name</h1>
+            <p data-aos="fade-up" data-aos-delay="500">Web Developer | Designer | Programmer</p>
+            <a href="#contact" class="btn" data-aos="fade-up" data-aos-delay="1000">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">About Me</div>
+            <p class="text-center" data-aos="fade-up" data-aos-delay="200">I am a passionate web developer with expertise in front-end and back-end development. I love building efficient, scalable, and user-friendly websites.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">Skills</div>
+            <div class="row">
+                <!-- Skill Card 1 -->
+                <div class="col-md-4">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                        <p>Expert in building semantic, well-structured HTML5 web pages.</p>
+                    </div>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="col-md-4">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                        <p>Proficient in creating responsive, mobile-first designs using CSS3.</p>
+                    </div>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="col-md-4">
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fab fa-js-square"></i>
+                        <h3>JavaScript</h3>
+                        <p>Experienced in modern JavaScript, including ES6 and frameworks like React.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">My Projects</div>
+            <div class="row">
+                <!-- Example Project -->
+                <div class="col-md-4">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                        <img src="https://via.placeholder.com/350x200" alt="Project">
+                        <h4>Project Title</h4>
+                        <p>A brief description of the project and technologies used.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">Contact Me</div>
+            <div class="text-center" data-aos="fade-up">
+                <p>If you're interested in working together or just want to say hello, feel free to reach out!</p>
+                <p>Email: <strong>your-email@example.com</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Your Name | <a href="mailto:your-email@example.com">Email</a></p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+</body>
+</html>
