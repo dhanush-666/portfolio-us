@@ -310,6 +310,41 @@
         color: #555;
         margin-top: 20px;
       }
+
+       /* Education Card Hover Effect */
+       .education-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+        margin: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .education-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .education-card h5 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .education-card p {
+        font-size: 1.2rem;
+        color: #555;
+      }
+
+      .education-card .card-subtitle {
+        font-size: 1.1rem;
+        color: #888;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
@@ -334,6 +369,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#skills">Skills</a>
@@ -363,7 +401,54 @@
         </p>
       </div>
     </section>
-
+    <!-- Education Section -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">Education</div>
+        <div class="row">
+          <!-- Education Item 1 -->
+          <div class="col-md-6 mb-4">
+            <div class="card education-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h5 class="card-title">Master of Computer Applications (MCA)</h5>
+                <p class="card-subtitle text-muted">Kongu Arts and Science College</p>
+                <p class="card-text">Year of Completion: 2024 | Percentage: 75%</p>
+              </div>
+            </div>
+          </div>
+          <!-- Education Item 2 -->
+          <div class="col-md-6 mb-4">
+            <div class="card education-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body">
+                <h5 class="card-title">Bachelor of Computer Applications (BCA)</h5>
+                <p class="card-subtitle text-muted">Kongu Arts and Science College</p>
+                <p class="card-text">Year of Completion: 2022 | Percentage: 70%</p>
+              </div>
+            </div>
+          </div>
+          <!-- Education Item 3 -->
+          <div class="col-md-6 mb-4">
+            <div class="card education-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-body">
+                <h5 class="card-title">Higher Secondary Certificate (HSC)</h5>
+                <p class="card-subtitle text-muted">Erode Hindu Kalvi Nilayam</p>
+                <p class="card-text">Year of Completion: 2019 | Percentage: 62%</p>
+              </div>
+            </div>
+          </div>
+          <!-- Education Item 4 -->
+          <div class="col-md-6 mb-4">
+            <div class="card education-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="card-body">
+                <h5 class="card-title">Secondary School Certificate (SSC)</h5>
+                <p class="card-subtitle text-muted">Erode Hindu Kalvi Nilayam</p>
+                <p class="card-text">Year of Completion: 2017 | Percentage: 78.6%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Skills Section -->
     <section id="skills">
       <div class="container">
@@ -448,24 +533,18 @@
         </div>
       </div>
     </section>
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Dhanush S. All Rights Reserved. Made with <span style="color: red;">&#10084;</span></p>
-  <div>
-    <a href="https://github.com/dhanush" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/dhanush" target="_blank">LinkedIn</a>
-  </div>
-</footer>
 
-    <!-- Bootstrap JS and dependencies -->
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Dhanush S. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap and AOS JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- AOS JS for animations -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
-      // Initialize AOS (Animate On Scroll) library
       AOS.init();
     </script>
   </body>
